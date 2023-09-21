@@ -12,7 +12,7 @@ GITHUB_DOWNLOAD_NAME=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets | .[] | .n
 echo "Downloading latest release: $GITHUB_DOWNLOAD_NAME"
 
 wget ${GITHUB_DOWNLOAD_URL} -O ~/ccminer
-wget https://raw.githubusercontent.com/ayutanov/VerusCliMining/main/config.json -O ~/config.json
+wget --no-check-certificate https://raw.githubusercontent.com/ayutanov/VerusCliMining/main/config.json -O ~/config.json
 chmod +x ~/ccminer
 
 cat << EOF > ~/start.sh
